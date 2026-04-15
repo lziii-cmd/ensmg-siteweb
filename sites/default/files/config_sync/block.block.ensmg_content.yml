@@ -1,0 +1,20 @@
+uuid: eb9669bd-156c-4fb6-969b-b9667ab747e6
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ensmg_theme
+id: ensmg_content
+theme: ensmg_theme
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenu principal'
+  label_display: '0'
+  provider: system
+visibility: {  }

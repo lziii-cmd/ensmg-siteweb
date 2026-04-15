@@ -1,0 +1,30 @@
+name: ENSMG Theme
+type: theme
+description: 'Thème corporate Bleu Marine & Or pour l''École Nationale Supérieure des Mines et de la Géologie - UCAD Dakar'
+package: Custom
+core_version_requirement: ^10 || ^11
+base theme: stable9
+
+libraries:
+  - ensmg_theme/global-styles
+  - ensmg_theme/global-scripts
+
+regions:
+  header: 'En-tête / Logo'
+  primary_menu: 'Navigation principale'
+  pre_content: 'Avant le contenu'
+  hero: 'Hero / Bannière'
+  highlighted: 'Mis en avant'
+  breadcrumb: 'Fil d''Ariane'
+  content: 'Contenu principal'
+  sidebar_first: 'Colonne gauche'
+  sidebar_second: 'Colonne droite'
+  featured_top: 'En vedette (haut)'
+  featured_bottom: 'En vedette (bas)'
+  footer_first: 'Pied de page - Colonne 1'
+  footer_second: 'Pied de page - Colonne 2'
+  footer_third: 'Pied de page - Colonne 3'
+  footer_bottom: 'Pied de page - Bas'
+
+ckeditor_stylesheets:
+  - css/style.css

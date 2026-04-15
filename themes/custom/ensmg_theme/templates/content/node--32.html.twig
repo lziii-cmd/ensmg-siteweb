@@ -1,0 +1,339 @@
+{#
+/**
+ * @file
+ * ENSMG — Page premium : Corps Enseignant (node 32)
+ */
+#}
+{{ attach_library('ensmg_theme/corps-enseignant') }}
+<div class="ens-page">
+
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  {# ══════════════════════════════════════════
+     HERO
+  ══════════════════════════════════════════ #}
+  <div class="ens-hero">
+    <div class="ens-hero-shapes" aria-hidden="true">
+      <div class="ens-shape ens-shape--1"></div>
+      <div class="ens-shape ens-shape--2"></div>
+      <div class="ens-shape ens-shape--3"></div>
+    </div>
+    <div class="ens-hero-grid" aria-hidden="true"></div>
+    <div class="ens-container ens-hero-inner">
+      {# Breadcrumb déplacé dans le header (header-breadcrumb-bar) #}
+      <div class="ens-hero-eyebrow">
+        <span class="ens-pulse-dot"></span>
+        École · Corps Enseignant
+      </div>
+      <h1 class="ens-hero-title">
+        Corps Enseignant<br>
+        <span class="ens-hero-title-accent">de l'ENSMG</span>
+      </h1>
+      <p class="ens-hero-sub">
+        Des enseignants-chercheurs de haut niveau, alliant expertise scientifique<br>
+        et ancrage dans les réalités industrielles africaines.
+      </p>
+      <div class="ens-hero-stats">
+        <div class="ens-hstat">
+          <span class="ens-hstat-n">10+</span>
+          <span class="ens-hstat-l">Enseignants</span>
+        </div>
+        <div class="ens-hstat-sep" aria-hidden="true"></div>
+        <div class="ens-hstat">
+          <span class="ens-hstat-n">10</span>
+          <span class="ens-hstat-l">Spécialités</span>
+        </div>
+        <div class="ens-hstat-sep" aria-hidden="true"></div>
+        <div class="ens-hstat">
+          <span class="ens-hstat-n">50+</span>
+          <span class="ens-hstat-l">Ans d'expertise</span>
+        </div>
+      </div>
+    </div>
+    <div class="ens-hero-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,30 C480,70 960,0 1440,45 L1440,70 L0,70 Z" fill="#f7f8fc"/>
+      </svg>
+    </div>
+  </div>
+
+  {# ══════════════════════════════════════════
+     INTRO
+  ══════════════════════════════════════════ #}
+  <div class="ens-section ens-section--off">
+    <div class="ens-container">
+      <div class="ens-intro-layout ens-reveal">
+        <div class="ens-intro-icon-col" aria-hidden="true">
+          <div class="ens-intro-icon-wrap">
+            <i class="bi bi-mortarboard-fill"></i>
+          </div>
+          <div class="ens-intro-line"></div>
+        </div>
+        <div class="ens-intro-body">
+          <div class="ens-section-eyebrow">
+            <span class="ens-eyebrow-dot"></span>Notre équipe pédagogique
+          </div>
+          <h2 class="ens-section-title">Une excellence fondée sur la science et le terrain</h2>
+          <p class="ens-section-lead">L'ENSMG dispose d'un corps enseignant de haut niveau, composé d'enseignants-chercheurs permanents et d'intervenants professionnels issus du secteur industriel.</p>
+          <div class="ens-intro-pillars">
+            <div class="ens-pillar">
+              <i class="bi bi-graph-up-arrow"></i>
+              <span>Recherche active</span>
+            </div>
+            <div class="ens-pillar">
+              <i class="bi bi-briefcase-fill"></i>
+              <span>Expertise industrielle</span>
+            </div>
+            <div class="ens-pillar">
+              <i class="bi bi-globe2"></i>
+              <span>Rayonnement international</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {# Wave off→white #}
+  <div class="ens-wave-sep ens-wave-sep--off-white" aria-hidden="true">
+    <svg viewBox="0 0 1440 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,25 C360,50 1080,0 1440,25 L1440,50 L0,50 Z" fill="#ffffff"/>
+    </svg>
+  </div>
+
+  {# ══════════════════════════════════════════
+     FILTRES + GRILLE ENSEIGNANTS
+  ══════════════════════════════════════════ #}
+  <div class="ens-section ens-section--white">
+    <div class="ens-container">
+
+      <div class="ens-section-header ens-reveal">
+        <div class="ens-section-eyebrow">
+          <span class="ens-eyebrow-dot"></span>Enseignants-chercheurs
+        </div>
+        <h2 class="ens-section-title">Notre équipe</h2>
+      </div>
+
+      {# Filtres #}
+      <div class="ens-filters ens-reveal" role="group" aria-label="Filtrer par domaine">
+        <button class="ens-filter-btn ens-filter-btn--active" data-filter="all">
+          <i class="bi bi-grid-fill"></i> Tous
+        </button>
+        <button class="ens-filter-btn" data-filter="geosciences">
+          <i class="bi bi-layers-fill"></i> Géosciences
+        </button>
+        <button class="ens-filter-btn" data-filter="hydrogeo">
+          <i class="bi bi-water"></i> Hydro / Géotechnique
+        </button>
+        <button class="ens-filter-btn" data-filter="techno">
+          <i class="bi bi-cpu-fill"></i> Technologies
+        </button>
+      </div>
+
+      {# ── Carte Directeur (vedette) ── #}
+      <div class="ens-director-wrap ens-reveal" data-domain="geosciences">
+        <div class="ens-director-card">
+          <div class="ens-director-photo" style="background:linear-gradient(135deg,#071528,#0d2244);position:relative;overflow:hidden;">
+            <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:5.5rem;font-weight:700;color:rgba(201,168,76,.8);">DM</div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(transparent,rgba(7,21,40,.95));"></div>
+            <span class="ens-domain-badge ens-badge--blue" style="position:absolute;top:16px;right:16px;">Géosciences</span>
+            <span class="ens-director-badge">Directeur</span>
+          </div>
+          <div class="ens-director-info">
+            <div class="ens-director-role"><i class="bi bi-star-fill"></i> Directeur de l'ENSMG</div>
+            <h3 class="ens-director-name">DIENE Mouhamadane</h3>
+            <div class="ens-card-spec"><i class="bi bi-broadcast-pin"></i> Géophysique</div>
+            <button class="ens-btn-profil" style="width:auto;padding:.7rem 2.5rem;margin-top:1rem;"><i class="bi bi-person-fill"></i> Profil du Directeur</button>
+          </div>
+        </div>
+      </div>
+
+      {# ── Grille 3×3 ── #}
+      <div class="ens-grid" id="ens-grid">
+
+        {# 1 - DIONE Adama #}
+        <div class="ens-card ens-reveal" data-domain="geosciences">
+          <div class="ens-card-photo" style="background:linear-gradient(135deg,#0d1e42,#1c3666);height:220px;position:relative;overflow:hidden;">
+            <div class="ens-photo-initials" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:3.8rem;font-weight:700;color:rgba(201,168,76,.75);">DA</div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:70px;background:linear-gradient(transparent,rgba(15,28,55,.9));"></div>
+            <span class="ens-domain-badge ens-badge--blue" style="position:absolute;top:12px;right:12px;">Géosciences</span>
+          </div>
+          <div class="ens-card-body">
+            <h3 class="ens-card-name">DIONE Adama</h3>
+            <div class="ens-card-spec"><i class="bi bi-geo-alt-fill"></i> Géologie structurale</div>
+            <button class="ens-btn-profil"><i class="bi bi-person-fill"></i> Profil</button>
+          </div>
+        </div>
+
+        {# 2 - THIAM Mohamadou #}
+        <div class="ens-card ens-reveal" data-domain="techno">
+          <div class="ens-card-photo" style="background:linear-gradient(135deg,#0b2844,#0f3d6e);height:220px;position:relative;overflow:hidden;">
+            <div class="ens-photo-initials" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:3.8rem;font-weight:700;color:rgba(201,168,76,.75);">TM</div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:70px;background:linear-gradient(transparent,rgba(15,28,55,.9));"></div>
+            <span class="ens-domain-badge ens-badge--gold" style="position:absolute;top:12px;right:12px;">Technologies</span>
+          </div>
+          <div class="ens-card-body">
+            <h3 class="ens-card-name">THIAM Mohamadou M.</h3>
+            <div class="ens-card-spec"><i class="bi bi-cpu-fill"></i> Géomatériaux</div>
+            <button class="ens-btn-profil"><i class="bi bi-person-fill"></i> Profil</button>
+          </div>
+        </div>
+
+        {# 3 - NDIAYE Abdoul Aziz #}
+        <div class="ens-card ens-reveal" data-domain="geosciences">
+          <div class="ens-card-photo" style="background:linear-gradient(135deg,#14325a,#1e4a82);height:220px;position:relative;overflow:hidden;">
+            <div class="ens-photo-initials" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:3.8rem;font-weight:700;color:rgba(201,168,76,.75);">NA</div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:70px;background:linear-gradient(transparent,rgba(15,28,55,.9));"></div>
+            <span class="ens-domain-badge ens-badge--blue" style="position:absolute;top:12px;right:12px;">Géosciences</span>
+          </div>
+          <div class="ens-card-body">
+            <h3 class="ens-card-name">NDIAYE Abdoul Aziz</h3>
+            <div class="ens-card-spec"><i class="bi bi-droplet-fill"></i> Géochimie</div>
+            <button class="ens-btn-profil"><i class="bi bi-person-fill"></i> Profil</button>
+          </div>
+        </div>
+
+        {# 4 - FAYE Gayane #}
+        <div class="ens-card ens-reveal" data-domain="geosciences">
+          <div class="ens-card-photo" style="background:linear-gradient(135deg,#1e2f52,#2d4a7a);height:220px;position:relative;overflow:hidden;">
+            <div class="ens-photo-initials" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:3.8rem;font-weight:700;color:rgba(201,168,76,.75);">FG</div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:70px;background:linear-gradient(transparent,rgba(15,28,55,.9));"></div>
+            <span class="ens-domain-badge ens-badge--blue" style="position:absolute;top:12px;right:12px;">Géosciences</span>
+          </div>
+          <div class="ens-card-body">
+            <h3 class="ens-card-name">FAYE Gayane</h3>
+            <div class="ens-card-spec"><i class="bi bi-gem"></i> Pétrologie</div>
+            <button class="ens-btn-profil"><i class="bi bi-person-fill"></i> Profil</button>
+          </div>
+        </div>
+
+        {# 5 - FAYE Cheikh Ibrahima #}
+        <div class="ens-card ens-reveal" data-domain="techno">
+          <div class="ens-card-photo" style="background:linear-gradient(135deg,#0b2844,#0f3d6e);height:220px;position:relative;overflow:hidden;">
+            <div class="ens-photo-initials" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:3.8rem;font-weight:700;color:rgba(201,168,76,.75);">FC</div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:70px;background:linear-gradient(transparent,rgba(15,28,55,.9));"></div>
+            <span class="ens-domain-badge ens-badge--gold" style="position:absolute;top:12px;right:12px;">Technologies</span>
+          </div>
+          <div class="ens-card-body">
+            <h3 class="ens-card-name">FAYE Cheikh Ibrahima</h3>
+            <div class="ens-card-spec"><i class="bi bi-satellite-fill"></i> Télédétection</div>
+            <button class="ens-btn-profil"><i class="bi bi-person-fill"></i> Profil</button>
+          </div>
+        </div>
+
+        {# 6 - NDIAYE Matar #}
+        <div class="ens-card ens-reveal" data-domain="hydrogeo">
+          <div class="ens-card-photo" style="background:linear-gradient(135deg,#0a2035,#0f2e52);height:220px;position:relative;overflow:hidden;">
+            <div class="ens-photo-initials" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:3.8rem;font-weight:700;color:rgba(201,168,76,.75);">NM</div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:70px;background:linear-gradient(transparent,rgba(15,28,55,.9));"></div>
+            <span class="ens-domain-badge ens-badge--teal" style="position:absolute;top:12px;right:12px;">Hydro/Géotechnique</span>
+          </div>
+          <div class="ens-card-body">
+            <h3 class="ens-card-name">NDIAYE Matar</h3>
+            <div class="ens-card-spec"><i class="bi bi-water"></i> Hydrogéologie</div>
+            <button class="ens-btn-profil"><i class="bi bi-person-fill"></i> Profil</button>
+          </div>
+        </div>
+
+        {# 7 - DIEYE Moumar #}
+        <div class="ens-card ens-reveal" data-domain="hydrogeo">
+          <div class="ens-card-photo" style="background:linear-gradient(135deg,#162440,#1f3868);height:220px;position:relative;overflow:hidden;">
+            <div class="ens-photo-initials" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:3.8rem;font-weight:700;color:rgba(201,168,76,.75);">DM</div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:70px;background:linear-gradient(transparent,rgba(15,28,55,.9));"></div>
+            <span class="ens-domain-badge ens-badge--teal" style="position:absolute;top:12px;right:12px;">Hydro/Géotechnique</span>
+          </div>
+          <div class="ens-card-body">
+            <h3 class="ens-card-name">DIEYE Moumar</h3>
+            <div class="ens-card-spec"><i class="bi bi-building-fill"></i> Géotechnique</div>
+            <button class="ens-btn-profil"><i class="bi bi-person-fill"></i> Profil</button>
+          </div>
+        </div>
+
+        {# 8 - NIANG Magatte #}
+        <div class="ens-card ens-reveal" data-domain="geosciences">
+          <div class="ens-card-photo" style="background:linear-gradient(135deg,#0d1e42,#1c3666);height:220px;position:relative;overflow:hidden;">
+            <div class="ens-photo-initials" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:3.8rem;font-weight:700;color:rgba(201,168,76,.75);">NM</div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:70px;background:linear-gradient(transparent,rgba(15,28,55,.9));"></div>
+            <span class="ens-domain-badge ens-badge--blue" style="position:absolute;top:12px;right:12px;">Géosciences</span>
+          </div>
+          <div class="ens-card-body">
+            <h3 class="ens-card-name">NIANG Magatte F.K</h3>
+            <div class="ens-card-spec"><i class="bi bi-gem"></i> Minéralogie</div>
+            <button class="ens-btn-profil"><i class="bi bi-person-fill"></i> Profil</button>
+          </div>
+        </div>
+
+        {# 9 - NDIAYE Codou #}
+        <div class="ens-card ens-reveal" data-domain="geosciences">
+          <div class="ens-card-photo" style="background:linear-gradient(135deg,#14325a,#1e4a82);height:220px;position:relative;overflow:hidden;">
+            <div class="ens-photo-initials" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:3.8rem;font-weight:700;color:rgba(201,168,76,.75);">NC</div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:70px;background:linear-gradient(transparent,rgba(15,28,55,.9));"></div>
+            <span class="ens-domain-badge ens-badge--blue" style="position:absolute;top:12px;right:12px;">Géosciences</span>
+          </div>
+          <div class="ens-card-body">
+            <h3 class="ens-card-name">NDIAYE Codou</h3>
+            <div class="ens-card-spec"><i class="bi bi-layers-fill"></i> Sédimentologie</div>
+            <button class="ens-btn-profil"><i class="bi bi-person-fill"></i> Profil</button>
+          </div>
+        </div>
+
+      </div>{# end .ens-grid #}
+    </div>
+  </div>
+
+  {# Wave white→navy #}
+  <div class="ens-wave-sep ens-wave-sep--white-navy" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="#0f1c37"/>
+    </svg>
+  </div>
+
+  {# ══════════════════════════════════════════
+     CTA
+  ══════════════════════════════════════════ #}
+  <div class="ens-section ens-section--navy">
+    <div class="ens-container">
+      <div class="ens-cta ens-reveal">
+        <div class="ens-cta-text">
+          <span class="ens-cta-eyebrow">En savoir plus</span>
+          <h2>Rejoindre l'ENSMG</h2>
+          <p>Formations d'excellence, recherche et opportunités de carrière dans les géosciences.</p>
+        </div>
+        <div class="ens-cta-actions">
+          <a href="/formation/ingenieur-geologue" class="btn-ensmg-primary">
+            <i class="bi bi-mortarboard-fill"></i> Nos formations
+          </a>
+          <a href="/contact" class="btn-ensmg-outline-light">
+            <i class="bi bi-chat-dots-fill"></i> Nous contacter
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {# ══════════════════════════════════════════
+     MODAL PROFIL ENSEIGNANT
+  ══════════════════════════════════════════ #}
+  <div class="ens-modal-overlay" id="ens-modal" role="dialog" aria-modal="true" aria-labelledby="ens-modal-name">
+    <div class="ens-modal-box">
+      <button class="ens-modal-close" id="ens-modal-close" aria-label="Fermer">
+        <i class="bi bi-x-lg"></i>
+      </button>
+      <div class="ens-modal-header">
+        <div class="ens-modal-avatar" id="ens-modal-avatar"></div>
+        <div class="ens-modal-header-body">
+          <div class="ens-modal-eyebrow" id="ens-modal-domain"></div>
+          <h2 class="ens-modal-name" id="ens-modal-name"></h2>
+          <p class="ens-modal-role" id="ens-modal-role"></p>
+        </div>
+      </div>
+      <div class="ens-modal-content">
+        <div class="ens-modal-spec" id="ens-modal-spec"></div>
+        <p class="ens-modal-bio" id="ens-modal-bio"></p>
+        <div class="ens-modal-tags" id="ens-modal-tags"></div>
+      </div>
+    </div>
+  </div>
+
+</div>{# end .ens-page #}

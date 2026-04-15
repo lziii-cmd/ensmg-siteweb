@@ -1,0 +1,7 @@
+.git
+.claude
+*.bat
+sites/default/settings.local.php
+sites/default/files
+node_modules
+APERCU_THEME.html

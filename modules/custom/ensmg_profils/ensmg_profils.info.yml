@@ -1,0 +1,5 @@
+name: 'ENSMG Profils Enseignants'
+type: module
+description: "Pages de profil premium pour les enseignants de l'ENSMG"
+core_version_requirement: ^10 || ^11
+package: Custom

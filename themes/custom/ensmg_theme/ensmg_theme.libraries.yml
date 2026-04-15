@@ -1,0 +1,38 @@
+global-styles:
+  version: 1.x
+  css:
+    theme:
+      css/style.css: {}
+
+vocation-ambition:
+  version: 1.x
+  css:
+    theme:
+      css/vocation-ambition.css: {}
+  js:
+    js/vocation-ambition.js: { minified: false }
+
+gouvernance:
+  version: 1.x
+  css:
+    theme:
+      css/gouvernance.css: {}
+  js:
+    js/gouvernance.js: { minified: false }
+
+corps-enseignant:
+  version: 1.x
+  css:
+    theme:
+      css/corps-enseignant.css: {}
+  js:
+    js/corps-enseignant.js: { minified: false }
+
+global-scripts:
+  version: 1.x
+  js:
+    js/main.js: { minified: false }
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once

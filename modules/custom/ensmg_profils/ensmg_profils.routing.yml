@@ -1,0 +1,8 @@
+ensmg_profils.profil:
+  path: '/ecole/enseignants/{slug}'
+  defaults:
+    _controller: '\Drupal\ensmg_profils\Controller\ProfilController::profil'
+    _title_callback: '\Drupal\ensmg_profils\Controller\ProfilController::title'
+  requirements:
+    _access: 'TRUE'
+    slug: '[a-z0-9\-]+'

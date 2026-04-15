@@ -1,0 +1,562 @@
+{#
+/**
+ * @file
+ * ENSMG Theme — Homepage Template
+ * Bleu Marine & Or — UCAD Dakar
+ */
+#}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ head_title }}
+    {{ head }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap">
+    {{ styles }}
+  </head>
+  <body{{ attributes }}>
+    {{ page_top }}
+
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <div class="layout-container">
+
+      {# ── Header & Navigation ── #}
+      <header class="site-header" role="banner">
+        <div class="header-inner">
+
+          {# Logo #}
+          <a href="{{ path('<front>') }}" class="site-logo" rel="home">
+            {% if page.header %}
+              {{ page.header }}
+            {% else %}
+              <div class="site-logo-text">
+                <span class="school-name">ENSMG</span>
+                <span class="school-acronym">École des Mines &amp; Géologie · UCAD Dakar</span>
+              </div>
+            {% endif %}
+          </a>
+
+          {# Mobile toggle #}
+          <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+            <i class="bi bi-list" style="font-size:1.5rem;"></i>
+            <span class="d-none d-sm-inline" style="font-size:.8rem;font-weight:600;">MENU</span>
+          </button>
+
+          {# Main navigation #}
+          <nav class="site-nav" role="navigation" aria-label="Navigation principale" id="main-nav">
+            {{ page.primary_menu }}
+          </nav>
+
+        </div>
+      </header>
+
+      <main id="main-content" role="main" tabindex="-1">
+
+        {{ page.highlighted }}
+
+        {# ── HERO ── #}
+        <section class="hero-section">
+          <div class="hero-inner">
+            {% if page.hero %}
+              {{ page.hero }}
+            {% else %}
+              <span class="hero-eyebrow">Excellence — Innovation — Afrique</span>
+              <h1 class="hero-title">
+                Former les <span>ingénieurs</span><br>de demain au cœur<br>des géosciences africaines
+              </h1>
+              <p class="hero-subtitle">
+                L'École Nationale Supérieure des Mines et de la Géologie forme depuis plus de 40 ans des ingénieurs et chercheurs de haut niveau, au service du développement durable du Sénégal et de l'Afrique.
+              </p>
+              <div class="hero-actions">
+                <a href="/admissions" class="btn-ensmg-primary">
+                  <i class="bi bi-mortarboard-fill"></i> Candidater
+                </a>
+                <a href="/formation" class="btn-ensmg-outline">
+                  <i class="bi bi-book-fill"></i> Nos formations
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        </section>
+
+        {# ── FEATURE PILLS BAR (inspiré Ekursus) ── #}
+        <div class="feature-pills-bar">
+          <div class="feature-pills-inner">
+            <a href="/formation/ingenieur-geologue" class="feature-pill">
+              <span class="fpill-icon"><i class="bi bi-mortarboard-fill"></i></span>
+              <span class="fpill-label">Ingénieur Géologue</span>
+            </a>
+            <a href="/formation/master-geotechnique" class="feature-pill">
+              <span class="fpill-icon"><i class="bi bi-book-fill"></i></span>
+              <span class="fpill-label">Master Géotechnique</span>
+            </a>
+            <a href="/formation/licence-pro-geotechnique" class="feature-pill">
+              <span class="fpill-icon"><i class="bi bi-patch-check-fill"></i></span>
+              <span class="fpill-label">Licence Professionnelle</span>
+            </a>
+            <a href="/formation/certification-mofi" class="feature-pill">
+              <span class="fpill-icon"><i class="bi bi-graph-up-arrow"></i></span>
+              <span class="fpill-label">Certification MOFI</span>
+            </a>
+          </div>
+        </div>
+
+        {# ── STATISTICS BAR ── #}
+        <div class="stats-bar">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-number" data-count="400" data-suffix="+">400+</div>
+              <div class="stat-label">Ingénieurs formés</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="40" data-suffix="ans">40 ans</div>
+              <div class="stat-label">D'excellence</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="4">4</div>
+              <div class="stat-label">Programmes de formation</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="3">3</div>
+              <div class="stat-label">Laboratoires de recherche</div>
+            </div>
+          </div>
+        </div>
+
+        {# ── POURQUOI L'ENSMG (inspiré Hostinza "Why Choose Us") ── #}
+        <section class="section why-section">
+          <div class="container-ensmg">
+            <div class="section-header text-center reveal">
+              <span class="section-eyebrow">Nos atouts</span>
+              <h2 class="section-title">Pourquoi choisir l'ENSMG ?</h2>
+            </div>
+            <div class="why-grid reveal-stagger">
+              <div class="why-card">
+                <div class="why-icon-wrap">
+                  <i class="bi bi-trophy-fill"></i>
+                </div>
+                <h3 class="why-title">Excellence académique</h3>
+                <p class="why-desc">40 ans de formation d'ingénieurs et de chercheurs reconnus nationalement et internationalement dans les géosciences.</p>
+              </div>
+              <div class="why-card why-card--featured">
+                <div class="why-icon-wrap">
+                  <i class="bi bi-buildings-fill"></i>
+                </div>
+                <h3 class="why-title">Partenariats industriels</h3>
+                <p class="why-desc">Des liens forts avec Randgold Resources, Teranga Gold, SOCOCIM et les grandes institutions minières d'Afrique et du monde.</p>
+              </div>
+              <div class="why-card">
+                <div class="why-icon-wrap">
+                  <i class="bi bi-briefcase-fill"></i>
+                </div>
+                <h3 class="why-title">Insertion professionnelle</h3>
+                <p class="why-desc">Nos diplômés exercent dans les plus grandes compagnies minières, bureaux d'études et organisations internationales.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {# ── FORMATIONS (inspiré Wastix service cards) ── #}
+        <section class="section section-bg">
+          <div class="container-ensmg">
+            <div class="section-header text-center reveal">
+              <span class="section-eyebrow">Programmes académiques</span>
+              <h2 class="section-title">Nos formations</h2>
+              <p class="section-lead">Des cursus d'excellence en géosciences, ingénierie minière, géotechnique et modélisation financière minière.</p>
+            </div>
+            <div class="wastix-grid reveal-stagger">
+              <a href="/formation/ingenieur-geologue" class="wastix-card">
+                <div class="wastix-icon"><i class="bi bi-hammer"></i></div>
+                <div class="wastix-level">Ingénieur · 5 ans</div>
+                <h3 class="wastix-title">Ingénieur Géologue</h3>
+                <p class="wastix-desc">Formation d'ingénieurs en sciences de la Terre — géologie, hydrogéologie, géophysique et géotechnique.</p>
+                <span class="wastix-arrow"><i class="bi bi-arrow-right"></i></span>
+              </a>
+              <a href="/formation/master-geotechnique" class="wastix-card">
+                <div class="wastix-icon"><i class="bi bi-layers-fill"></i></div>
+                <div class="wastix-level">Master · 2 ans</div>
+                <h3 class="wastix-title">Master Géotechnique</h3>
+                <p class="wastix-desc">Bases solides de géotechnique théoriques et pratiques pour répondre aux défis BTP et miniers.</p>
+                <span class="wastix-arrow"><i class="bi bi-arrow-right"></i></span>
+              </a>
+              <a href="/formation/licence-pro-geotechnique" class="wastix-card">
+                <div class="wastix-icon"><i class="bi bi-patch-check-fill"></i></div>
+                <div class="wastix-level">Licence Pro · 1 an</div>
+                <h3 class="wastix-title">Licence Pro Géominier</h3>
+                <p class="wastix-desc">Formation professionnalisante pour titulaires d'un bac+2 en sciences de la Terre ou génie civil.</p>
+                <span class="wastix-arrow"><i class="bi bi-arrow-right"></i></span>
+              </a>
+              <a href="/formation/certification-mofi" class="wastix-card">
+                <div class="wastix-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                <div class="wastix-level">Certification · Court</div>
+                <h3 class="wastix-title">Certification MOFI</h3>
+                <p class="wastix-desc">Modélisation financière des projets miniers — Cash Flow, TRI, VAN pour les professionnels du secteur minier.</p>
+                <span class="wastix-arrow"><i class="bi bi-arrow-right"></i></span>
+              </a>
+              <a href="/formation/licence-pro-geotechnique" class="wastix-card">
+                <div class="wastix-icon"><i class="bi bi-building-fill"></i></div>
+                <div class="wastix-level">BTP · Continu</div>
+                <h3 class="wastix-title">Géotechnique BTP</h3>
+                <p class="wastix-desc">Études de sol, fondations, talus et risques naturels pour les projets de construction et d'infrastructure.</p>
+                <span class="wastix-arrow"><i class="bi bi-arrow-right"></i></span>
+              </a>
+              <a href="/recherches" class="wastix-card">
+                <div class="wastix-icon"><i class="bi bi-globe2"></i></div>
+                <div class="wastix-level">Recherche · Continu</div>
+                <h3 class="wastix-title">Recherche appliquée</h3>
+                <p class="wastix-desc">Trois laboratoires actifs en pétrologie structurale, télédétection appliquée et géomatériaux.</p>
+                <span class="wastix-arrow"><i class="bi bi-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {# ── MOT DU DIRECTEUR (style Chancellor's Message) ── #}
+        <section class="section director-msg-section">
+          <div class="container-ensmg">
+            <div class="director-msg-layout reveal">
+
+              {# Photo gauche #}
+              <div class="director-msg-photo-col">
+                <div class="director-msg-photo-card">
+                  <div class="person-avatar-placeholder director-msg-avatar">MD</div>
+                  <div class="director-msg-photo-overlay">
+                    <div class="director-msg-name">Pr. Mahamadane DIENE</div>
+                    <div class="director-msg-role">Directeur de l'ENSMG</div>
+                  </div>
+                </div>
+                {# Stats flottantes #}
+                <div class="director-stat-float director-stat-1">
+                  <div class="dsf-num">400<sup>+</sup></div>
+                  <div class="dsf-lbl">Ingénieurs formés</div>
+                </div>
+                <div class="director-stat-float director-stat-2">
+                  <div class="dsf-num">40</div>
+                  <div class="dsf-lbl">Ans d'excellence</div>
+                </div>
+              </div>
+
+              {# Texte droite #}
+              <div class="director-msg-text-col">
+                <span class="section-eyebrow">Mot du Directeur</span>
+                <h2 class="section-title">Message du Directeur de l'ENSMG</h2>
+                <div class="director-msg-quote-icon"><i class="bi bi-quote"></i></div>
+                <div class="director-msg-excerpt">
+                  <p>Je vous souhaite la bienvenue sur le site de l'École Nationale Supérieure des Mines et de la Géologie ENSMG (ex IST). Après près de 40 ans d'existence et 400 ingénieurs formés, l'Institut des Sciences de la Terre a été érigé en École Nationale Supérieure par décret n° 2021-1500 du 16 novembre 2021.</p>
+                  <p>Face aux défis du secteur minier, des bâtiments et travaux publics, de l'eau et du secteur pétrolier, l'ENSMG s'est dotée d'un nouveau cadre juridique, pédagogique et environnemental, avec une vision de faire de l'école à l'horizon 2029 un Label durable et attractif...</p>
+                </div>
+                <button class="btn-director-more" id="btnDirectorMore" onclick="document.getElementById('directorModal').classList.add('is-open')">
+                  <span>Lire le message complet</span>
+                  <span class="btn-director-arrow"><i class="bi bi-arrow-right"></i></span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {# ── MODAL : Message complet du Directeur ── #}
+        <div class="director-modal-overlay" id="directorModal" onclick="if(event.target===this)this.classList.remove('is-open')">
+          <div class="director-modal-box">
+            <button class="director-modal-close" onclick="document.getElementById('directorModal').classList.remove('is-open')" aria-label="Fermer">
+              <i class="bi bi-x-lg"></i>
+            </button>
+            <div class="director-modal-header">
+              <div class="person-avatar-placeholder director-modal-avatar">MD</div>
+              <div>
+                <div class="director-modal-name">Pr. Mahamadane DIENE</div>
+                <div class="director-modal-role">Directeur de l'ENSMG (ex IST)</div>
+              </div>
+            </div>
+            <div class="director-modal-content">
+              <p><em>Chers visiteurs,</em></p>
+              <p>Je vous souhaite la bienvenue sur le site internet de l'École Nationale Supérieure des Mines et de la Géologie ENSMG (ex IST). Après près de 40 ans d'existence et prés de 400 ingénieurs formés, l'Institut des Sciences de la Terre (IST), a fait sa mutation pour devenir une École nationale supérieure par décret n° 2021-1500 du 16 novembre 2021 fixant les règles d'organisation et de fonctionnement de l'Université Cheikh Anta Diop de Dakar, puis par décret n° 2022-2284 du 22 décembre 2022 portant changement de dénomination de l'Institut des Sciences de la Terre (IST) et relatif à l'organisation et au fonctionnement de l'École nationale supérieure des Mines et de la Géologie (ENSMG).</p>
+              <p>Face aux défis du secteur minier, des bâtiments et travaux publics, de l'eau et du secteur pétrolier, l'ENSMG s'est dotée ainsi d'un nouveau cadre juridique, pédagogique et environnemental, avec une vision de faire de l'école à l'horizon 2029, un Label durable et attractif, contribuant fortement à l'Émergence du Sénégal et de la sous-région Ouest Africaine.</p>
+              <p>Cette vision s'appuie sur les missions qui lui sont assignées qui s'orientent vers :</p>
+              <ul>
+                <li>Une Formation des hommes, des femmes hautement qualifiés adaptée aux besoins du marché du travail et un renforcement de capacités des agents de l'administration et de l'industrie minière ;</li>
+                <li>Une Recherche approfondie dans les domaines de la géologie, du pétrole, de l'hydrogéologie, de la géotechnique etc., au service des entreprises, des administrations et de la communauté ;</li>
+                <li>Une Promotion de l'insertion des diplômés de l'ENSMG dans le marché du travail par une approche innovante d'accompagnement.</li>
+              </ul>
+              <p>L'ENSMG forme des femmes et des hommes compétents disposés à servir avec dévouement, intégrité et loyauté la communauté au-delà même des géosciences à l'image de tous nos alumni Hauts Cadres, pour un Sénégal émergent.</p>
+              <p>L'École s'appuie sur un personnel enseignant et de recherche (PER), un personnel administratif, technique et de services (PATS) entièrement dévoués à l'excellence et également sur des hauts cadres de l'administration, des entreprises publiques, privées et étrangères qui participent à la formation.</p>
+              <p>Ce portail vous apportera l'ensemble des informations utiles qui concernent l'École notamment sur ses ambitions, son administration, son fonctionnement, ses formations et partenariats stratégiques.</p>
+              <p><em>Chers visiteurs, je vous souhaite une bonne visite et espère que cet espace d'informations saura satisfaire vos besoins.</em></p>
+              <p class="director-modal-signature">— <strong>Pr. Mahamadane DIENE</strong><br><span>Directeur de l'ENSMG</span></p>
+            </div>
+          </div>
+        </div>
+
+        {# ── LABORATOIRES (inspiré Wastix cards) ── #}
+        <section class="section section-bg">
+          <div class="container-ensmg">
+            <div class="section-header text-center reveal">
+              <span class="section-eyebrow">Recherche scientifique</span>
+              <h2 class="section-title">Laboratoires de recherche</h2>
+              <p class="section-lead">Trois laboratoires d'excellence au service de la recherche appliquée en géosciences.</p>
+            </div>
+            <div class="wastix-grid wastix-grid--3 reveal-stagger">
+              <a href="/recherches" class="wastix-card">
+                <div class="wastix-icon wastix-icon--gem"><i class="bi bi-gem"></i></div>
+                <div class="wastix-level">Créé 2013</div>
+                <h3 class="wastix-title">Labo. Pétro-structural &amp; Métallogénie</h3>
+                <p class="wastix-desc">Analyse structurale et métallogénie des formations géologiques africaines. Soutenu par la coopération française.</p>
+                <span class="wastix-arrow"><i class="bi bi-arrow-right"></i></span>
+              </a>
+              <a href="/recherches" class="wastix-card">
+                <div class="wastix-icon wastix-icon--globe"><i class="bi bi-globe2"></i></div>
+                <div class="wastix-level">International</div>
+                <h3 class="wastix-title">Labo. Télédétection Appliquée</h3>
+                <p class="wastix-desc">Projets de recherche en partenariat international — cartographie, ressources naturelles et environnement.</p>
+                <span class="wastix-arrow"><i class="bi bi-arrow-right"></i></span>
+              </a>
+              <a href="/recherches" class="wastix-card">
+                <div class="wastix-icon wastix-icon--layers"><i class="bi bi-layers-fill"></i></div>
+                <div class="wastix-level">Innovation</div>
+                <h3 class="wastix-title">Laboratoire Géomatériaux</h3>
+                <p class="wastix-desc">Enseignement, recherche-développement et services en ingénierie géotechnique et matériaux de construction.</p>
+                <span class="wastix-arrow"><i class="bi bi-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {# ── ACTUALITÉS ── #}
+        <section class="section section-bg">
+          <div class="container-ensmg">
+            <div class="section-header" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;">
+              <div>
+                <span class="section-eyebrow">À la une</span>
+                <h2 class="section-title" style="margin-bottom:0;">Actualités</h2>
+              </div>
+              <a href="/actualites" class="btn-ensmg-blue">Toutes les actualités <i class="bi bi-arrow-right"></i></a>
+            </div>
+            <div class="news-list">
+              <div class="news-item">
+                <div class="news-date-badge">
+                  <div class="news-date-day">16</div>
+                  <div class="news-date-month">Juil 2024</div>
+                </div>
+                <div class="news-body">
+                  <span class="news-tag">Recrutement</span>
+                  <div class="news-title"><a href="/actualites/recrutement-enseignant-chercheur">Appel à candidature pour le recrutement d'un enseignant chercheur en ingénierie minière</a></div>
+                  <div class="news-excerpt">L'ENSMG lance un appel à candidature pour le recrutement d'un enseignant chercheur dans le domaine de l'ingénierie minière.</div>
+                </div>
+              </div>
+              <div class="news-item">
+                <div class="news-date-badge">
+                  <div class="news-date-day">10</div>
+                  <div class="news-date-month">Nov 2023</div>
+                </div>
+                <div class="news-body">
+                  <span class="news-tag">Institution</span>
+                  <div class="news-title"><a href="/actualites/passation-service">Passation de service — Un nouveau directeur à la tête de l'ENSMG</a></div>
+                  <div class="news-excerpt">L'École Nationale Supérieure des Mines et de la Géologie ENSMG (ex IST) accueille un nouveau directeur.</div>
+                </div>
+              </div>
+              <div class="news-item">
+                <div class="news-date-badge">
+                  <div class="news-date-day">01</div>
+                  <div class="news-date-month">Jan 2023</div>
+                </div>
+                <div class="news-body">
+                  <span class="news-tag">Formation</span>
+                  <div class="news-title"><a href="/formation/certification-mofi">Nouvelle certification en Modélisation Financière des Projets Miniers (MOFI)</a></div>
+                  <div class="news-excerpt">L'ENSMG lance une nouvelle certification professionnelle en modélisation financière des projets miniers.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {# ── ENSEIGNANTS CHERCHEURS ── #}
+        <section class="section">
+          <div class="container-ensmg">
+            <div class="section-header text-center">
+              <span class="section-eyebrow">Corps professoral</span>
+              <h2 class="section-title">Nos enseignants chercheurs</h2>
+              <p class="section-lead">Une équipe de professeurs et chercheurs reconnus nationalement et internationalement.</p>
+            </div>
+            <div class="people-grid">
+              <div class="person-card">
+                <div class="person-avatar-placeholder">MD</div>
+                <div class="person-body">
+                  <div class="person-name">DIENE Mahamadane</div>
+                  <div class="person-grade">Directeur — Professeur</div>
+                  <div class="person-speciality">Géologie structurale</div>
+                </div>
+              </div>
+              <div class="person-card">
+                <div class="person-avatar-placeholder">DA</div>
+                <div class="person-body">
+                  <div class="person-name">DIONE Adama</div>
+                  <div class="person-grade">Maître de Conférence titulaire</div>
+                  <div class="person-speciality">Géosciences</div>
+                </div>
+              </div>
+              <div class="person-card">
+                <div class="person-avatar-placeholder">FG</div>
+                <div class="person-body">
+                  <div class="person-name">FAYE Gayane</div>
+                  <div class="person-grade">Professeur assimilé</div>
+                  <div class="person-speciality">Géologie</div>
+                </div>
+              </div>
+              <div class="person-card">
+                <div class="person-avatar-placeholder">FC</div>
+                <div class="person-body">
+                  <div class="person-name">FAYE Cheikh Ibrahima</div>
+                  <div class="person-grade">Maître de conf. assimilé</div>
+                  <div class="person-speciality">Géotechnique</div>
+                </div>
+              </div>
+              <div class="person-card">
+                <div class="person-avatar-placeholder">DM</div>
+                <div class="person-body">
+                  <div class="person-name">DIEYE Moumar</div>
+                  <div class="person-grade">Maître de Conférence titulaire</div>
+                  <div class="person-speciality">Géologie appliquée</div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center mt-4">
+              <a href="/enseignants" class="btn-ensmg-blue">
+                Voir tous les enseignants <i class="bi bi-people-fill"></i>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {# ── CTA ENTREPRISE ── #}
+        <section class="section section-bg">
+          <div class="container-ensmg">
+            <div class="cta-entreprise reveal">
+              <div class="cta-ent-text">
+                <span class="section-eyebrow">Monde professionnel</span>
+                <h2 class="section-title">L'ENSMG &amp; l'Entreprise</h2>
+                <p>Partenariats industriels, stages, compétences de nos ingénieurs — découvrez comment l'ENSMG collabore avec le tissu économique national et international.</p>
+              </div>
+              <div class="cta-ent-actions">
+                <a href="/entreprise/partenariats" class="btn-ensmg-blue">
+                  <i class="bi bi-buildings"></i> Partenariats
+                </a>
+                <a href="/entreprise/competences" class="btn-ensmg-blue">
+                  <i class="bi bi-award"></i> Compétences
+                </a>
+                <a href="/entreprise/stages" class="btn-ensmg-blue">
+                  <i class="bi bi-briefcase"></i> Stages
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {# ── CTA ADMISSIONS ── #}
+        <div class="cta-banner">
+          <div class="cta-banner-inner">
+            <h2>Rejoignez l'ENSMG</h2>
+            <p>Candidatez dès maintenant pour intégrer nos programmes de formation et rejoindre une communauté d'ingénieurs d'excellence engagés pour l'Afrique.</p>
+            <div class="cta-actions">
+              <a href="/admissions" class="btn-ensmg-primary">
+                <i class="bi bi-file-earmark-person-fill"></i> Déposer ma candidature
+              </a>
+              <a href="/contact" class="btn-ensmg-outline">
+                <i class="bi bi-chat-dots-fill"></i> Nous contacter
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {# ── FEATURED BOTTOM ── #}
+        {% if page.featured_bottom %}
+          {{ page.featured_bottom }}
+        {% endif %}
+
+        {# Standard Drupal content region #}
+        {% if page.content %}
+          <div style="display:none;">{{ page.content }}</div>
+        {% endif %}
+
+      </main>
+
+      {# Footer #}
+      <footer class="site-footer" role="contentinfo">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <div class="footer-logo">
+              <div class="site-logo-text footer-logo-text">
+                <span class="school-name">ENSMG</span>
+                <span class="school-acronym">École des Mines &amp; Géologie · UCAD Dakar</span>
+              </div>
+            </div>
+            <p>Former des ingénieurs et chercheurs de haut niveau dans les domaines des géosciences, au service du développement du Sénégal et de l'Afrique de l'Ouest.</p>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+          <div>
+            <div class="footer-col-title">Navigation</div>
+            <ul class="footer-links">
+              <li><a href="/formation">Formations</a></li>
+              <li><a href="/admissions">Admissions</a></li>
+              <li><a href="/recherches">Recherches</a></li>
+              <li><a href="/enseignants">Enseignants</a></li>
+              <li><a href="/actualites">Actualités</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer-col-title">Formations</div>
+            <ul class="footer-links">
+              <li><a href="/formation/ingenieur-geologue">Ingénieur Géologue</a></li>
+              <li><a href="/formation/master-geotechnique">Master Géotechnique</a></li>
+              <li><a href="/formation/licence-pro-geotechnique">Licence Pro Géotechnique</a></li>
+              <li><a href="/formation/certification-mofi">Certification MOFI</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer-col-title">Contact</div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon"><i class="bi bi-geo-alt-fill"></i></span>
+              <span>Université Cheikh Anta Diop<br>BP 5005 Dakar-Fann, Sénégal</span>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon"><i class="bi bi-telephone-fill"></i></span>
+              <span>+221 33 824 23 45</span>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon"><i class="bi bi-envelope-fill"></i></span>
+              <span>contact@ensmg.ucad.sn</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-bottom-inner">
+            <span>© {{ "now"|date("Y") }} ENSMG — UCAD Dakar. Tous droits réservés.</span>
+            <div class="d-flex gap-3">
+              <a href="/mentions-legales">Mentions légales</a>
+              <a href="/plan-du-site">Plan du site</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    {{ page_bottom }}
+    {{ scripts }}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

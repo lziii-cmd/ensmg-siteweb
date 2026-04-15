@@ -1,0 +1,20 @@
+uuid: 1f4471e3-2e6d-47ff-9c57-5cb3c9d36b96
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - ensmg_theme
+id: ensmg_local_tasks
+theme: ensmg_theme
+region: pre_content
+weight: -10
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Taches
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

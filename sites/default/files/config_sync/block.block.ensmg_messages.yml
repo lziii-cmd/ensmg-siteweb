@@ -1,0 +1,20 @@
+uuid: e38deafd-3dcc-44d1-bbd7-a47079561842
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ensmg_theme
+id: ensmg_messages
+theme: ensmg_theme
+region: highlighted
+weight: -100
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

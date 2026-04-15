@@ -1,0 +1,364 @@
+{#
+/**
+ * @file
+ * ENSMG Theme — Page premium : Vocation et Ambition (node 30)
+ * Template spécifique — layout narratif complet — v2 (9.5/10)
+ */
+#}
+{{ attach_library('ensmg_theme/vocation-ambition') }}
+<div class="va-page">
+
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  {# Barre de progression lecture #}
+  <div class="reading-progress-bar" id="readingProgress"></div>
+
+  {# ══════════════════════════════════════════════
+     BLOC 1 — HERO PLEIN ÉCRAN
+  ══════════════════════════════════════════════ #}
+  <div class="va-hero">
+    {# Shapes flottantes #}
+    <div class="va-hero-shapes" aria-hidden="true">
+      <div class="va-hero-shape va-hero-shape--1"></div>
+      <div class="va-hero-shape va-hero-shape--2"></div>
+      <div class="va-hero-shape va-hero-shape--3"></div>
+      <div class="va-hero-shape va-hero-shape--4"></div>
+      <div class="va-hero-shape va-hero-shape--5"></div>
+    </div>
+    {# Grille décorative #}
+    <div class="va-hero-grid" aria-hidden="true"></div>
+
+    <div class="va-container va-hero-inner">
+      <div class="va-hero-eyebrow va-reveal">
+        <span class="va-hero-dot"></span>
+        Institution · Vocation &amp; Ambition
+      </div>
+      <div class="va-quote-icon va-reveal" aria-hidden="true">❝</div>
+      <blockquote class="va-hero-quote va-reveal">
+        Former des ingénieurs et chercheurs de haut niveau,<br>
+        au service du développement durable du<br>
+        <em>Sénégal et de l'Afrique</em> — depuis 1971.
+      </blockquote>
+      <div class="va-hero-source va-reveal">
+        <div class="va-hero-line"></div>
+        <span>ENSMG · École Nationale Supérieure des Mines et de la Géologie · UCAD Dakar</span>
+        <div class="va-hero-line"></div>
+      </div>
+      <div class="va-hero-scroll va-reveal" aria-hidden="true">
+        <div class="va-scroll-dot"></div>
+      </div>
+    </div>
+  </div>
+
+  {# Wave separator #}
+  <div class="va-wave va-wave--hero-to-white" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z" fill="#ffffff"/>
+    </svg>
+  </div>
+
+  {# ══════════════════════════════════════════════
+     BLOC 2 — NOTRE VOCATION (texte + pills)
+  ══════════════════════════════════════════════ #}
+  <div class="va-section va-section--white">
+    <div class="va-container">
+      <div class="va-vocation-layout">
+
+        {# Texte principal #}
+        <div class="va-vocation-text va-reveal">
+          <div class="va-section-eyebrow">
+            <span class="va-eyebrow-dot"></span>Notre Vocation
+          </div>
+          <h2 class="va-section-title">Une école d'excellence<br>au cœur des géosciences</h2>
+          <p class="va-lead">L'École Nationale Supérieure des Mines et de la Géologie (ENSMG), anciennement Institut des Sciences de la Terre (IST), a été créée en 1971. Elle forme depuis plus de 40 ans des ingénieurs et chercheurs de haut niveau.</p>
+          <p class="va-body">Érigée en école nationale supérieure par décrets présidentiels en 2021-2022, l'ENSMG a pour vocation de former des cadres supérieurs compétents dans les domaines des mines, de la géologie et des géosciences appliquées.</p>
+          <div class="va-pills">
+            <span class="va-pill"><i class="bi bi-gem"></i> Mines &amp; Géologie</span>
+            <span class="va-pill"><i class="bi bi-droplet-fill"></i> Hydrogéologie</span>
+            <span class="va-pill"><i class="bi bi-layers-fill"></i> Géotechnique</span>
+            <span class="va-pill"><i class="bi bi-graph-up-arrow"></i> Pétrole</span>
+            <span class="va-pill"><i class="bi bi-globe-americas"></i> Télédétection</span>
+          </div>
+        </div>
+
+        {# Image / visuel décoratif #}
+        <div class="va-vocation-visual va-reveal">
+          <div class="va-voc-card va-voc-card--main">
+            <div class="va-voc-icon"><i class="bi bi-mortarboard-fill"></i></div>
+            <div class="va-voc-label">Formation d'élite</div>
+            <div class="va-voc-sub">Bac+3 → Bac+5</div>
+          </div>
+          <div class="va-voc-card va-voc-card--accent">
+            <div class="va-voc-icon"><i class="bi bi-geo-alt-fill"></i></div>
+            <div class="va-voc-label">Dakar, Sénégal</div>
+            <div class="va-voc-sub">Campus UCAD</div>
+          </div>
+          <div class="va-voc-card va-voc-card--light">
+            <div class="va-voc-icon"><i class="bi bi-calendar3"></i></div>
+            <div class="va-voc-label">Fondée en 1971</div>
+            <div class="va-voc-sub">50+ ans d'histoire</div>
+          </div>
+          <div class="va-voc-bg-circle" aria-hidden="true"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  {# ══════════════════════════════════════════════
+     BLOC 3 — FRISE CHRONOLOGIQUE (pleine largeur)
+  ══════════════════════════════════════════════ #}
+  <div class="va-section va-section--off va-tl-section">
+    <div class="va-container">
+      <div class="va-section-header-center va-reveal">
+        <div class="va-section-eyebrow">
+          <span class="va-eyebrow-dot"></span>Notre Histoire
+        </div>
+        <h2 class="va-section-title">50 ans d'engagement pour les géosciences</h2>
+      </div>
+
+      <div class="va-tl-horizontal">
+        <div class="va-tl-track" aria-hidden="true"></div>
+
+        <div class="va-tl-item va-reveal">
+          <div class="va-tl-node va-tl-node--gold">
+            <i class="bi bi-building-fill-add"></i>
+          </div>
+          <div class="va-tl-card">
+            <div class="va-tl-year">1971</div>
+            <div class="va-tl-title">Création de l'IST</div>
+            <p>Fondation de l'Institut des Sciences de la Terre à l'Université Cheikh Anta Diop de Dakar.</p>
+          </div>
+        </div>
+
+        <div class="va-tl-item va-reveal">
+          <div class="va-tl-node">
+            <i class="bi bi-file-earmark-text-fill"></i>
+          </div>
+          <div class="va-tl-card">
+            <div class="va-tl-year">2021</div>
+            <div class="va-tl-title">Décret n°2021-1500</div>
+            <p>L'IST est érigée en École Nationale Supérieure par décret présidentiel du 16 novembre 2021.</p>
+          </div>
+        </div>
+
+        <div class="va-tl-item va-reveal">
+          <div class="va-tl-node">
+            <i class="bi bi-patch-check-fill"></i>
+          </div>
+          <div class="va-tl-card">
+            <div class="va-tl-year">2022</div>
+            <div class="va-tl-title">Naissance de l'ENSMG</div>
+            <p>Décret n°2022-2284 portant dénomination officielle : École Nationale Supérieure des Mines et de la Géologie.</p>
+          </div>
+        </div>
+
+        <div class="va-tl-item va-tl-item--future va-reveal">
+          <div class="va-tl-node va-tl-node--future">
+            <i class="bi bi-stars"></i>
+          </div>
+          <div class="va-tl-card va-tl-card--future">
+            <div class="va-tl-year">2029</div>
+            <div class="va-tl-title">Vision — Label d'excellence</div>
+            <p>Faire de l'ENSMG un label durable et attractif contribuant à l'émergence du Sénégal et de l'Afrique.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  {# Wave separator navy #}
+  <div class="va-wave va-wave--off-to-navy" aria-hidden="true">
+    <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 C480,70 960,0 1440,50 L1440,70 L0,70 Z" fill="var(--bleu-marine-dark)"/>
+    </svg>
+  </div>
+
+  {# ══════════════════════════════════════════════
+     BLOC 4 — CHIFFRES CLÉS (animés)
+  ══════════════════════════════════════════════ #}
+  <div class="va-section va-section--navy">
+    <div class="va-container">
+      <div class="va-section-header-center va-reveal">
+        <div class="va-section-eyebrow va-eyebrow--light">
+          <span class="va-eyebrow-dot va-eyebrow-dot--or"></span>En chiffres
+        </div>
+        <h2 class="va-section-title va-title--white">L'ENSMG en chiffres</h2>
+      </div>
+      <div class="va-stats-grid">
+        <div class="va-stat-card va-reveal">
+          <div class="va-stat-glow" aria-hidden="true"></div>
+          <div class="va-stat-icon"><i class="bi bi-people-fill"></i></div>
+          <div class="va-stat-number" data-count="400" data-suffix="+">400+</div>
+          <div class="va-stat-label">Ingénieurs formés</div>
+          <div class="va-stat-desc">depuis la création en 1971</div>
+        </div>
+        <div class="va-stat-card va-stat-card--featured va-reveal">
+          <div class="va-stat-glow va-stat-glow--gold" aria-hidden="true"></div>
+          <div class="va-stat-icon"><i class="bi bi-award-fill"></i></div>
+          <div class="va-stat-number" data-count="50" data-suffix="+ ans">50+ ans</div>
+          <div class="va-stat-label">D'excellence académique</div>
+          <div class="va-stat-desc">au service des géosciences africaines</div>
+        </div>
+        <div class="va-stat-card va-reveal">
+          <div class="va-stat-glow" aria-hidden="true"></div>
+          <div class="va-stat-icon"><i class="bi bi-mortarboard-fill"></i></div>
+          <div class="va-stat-number" data-count="4">4</div>
+          <div class="va-stat-label">Programmes de formation</div>
+          <div class="va-stat-desc">du Bac+3 au Bac+5</div>
+        </div>
+        <div class="va-stat-card va-reveal">
+          <div class="va-stat-glow" aria-hidden="true"></div>
+          <div class="va-stat-icon"><i class="bi bi-microscope"></i></div>
+          <div class="va-stat-number" data-count="3">3</div>
+          <div class="va-stat-label">Laboratoires de recherche</div>
+          <div class="va-stat-desc">actifs en partenariat international</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {# Wave separator white #}
+  <div class="va-wave va-wave--navy-to-white" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,20 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#ffffff"/>
+    </svg>
+  </div>
+
+  {# ══════════════════════════════════════════════
+     BLOC 5 — NOTRE AMBITION (glassmorphism cards)
+  ══════════════════════════════════════════════ #}
+  <div class="va-section va-section--white">
+    <div class="va-container">
+      <div class="va-section-header-center va-reveal">
+        <div class="va-section-eyebrow">
+          <span class="va-eyebrow-dot"></span>Notre Ambition
+        </div>
+        <h2 class="va-section-title">Devenir le centre d'excellence<br>africain en géosciences</h2>
+        <p class="va-section-lead">L'ENSMG ambitionne d'être reconnue à l'international pour la qualité de ses formations, la pertinence de ses recherches et l'impact de ses diplômés sur le développement économique de l'Afrique.</p>
+      </div>
+      <div class="va-ambition-grid">
+
+        <div class="va-ambition-card va-reveal">
+          <div class="va-ambition-number" aria-hidden="true">01</div>
+          <div class="va-ambition-icon"><i class="bi bi-trophy-fill"></i></div>
+          <h3>Excellence académique</h3>
+          <p>Des cursus reconnus par l'État du Sénégal, accrédités par l'UCAD, avec une pédagogie alliant théorie et terrain.</p>
+          <div class="va-ambition-arrow"><i class="bi bi-arrow-right"></i></div>
+        </div>
+
+        <div class="va-ambition-card va-reveal">
+          <div class="va-ambition-number" aria-hidden="true">02</div>
+          <div class="va-ambition-icon"><i class="bi bi-globe2"></i></div>
+          <h3>Rayonnement international</h3>
+          <p>Des partenariats avec les meilleures institutions mondiales — Colorado School of Mines, École des Mines de Paris, China Geological Survey.</p>
+          <div class="va-ambition-arrow"><i class="bi bi-arrow-right"></i></div>
+        </div>
+
+        <div class="va-ambition-card va-reveal">
+          <div class="va-ambition-number" aria-hidden="true">03</div>
+          <div class="va-ambition-icon"><i class="bi bi-lightbulb-fill"></i></div>
+          <h3>Innovation &amp; Recherche</h3>
+          <p>Trois laboratoires de recherche appliquée contribuant à la compréhension et à l'exploitation responsable des ressources naturelles africaines.</p>
+          <div class="va-ambition-arrow"><i class="bi bi-arrow-right"></i></div>
+        </div>
+
+        <div class="va-ambition-card va-reveal">
+          <div class="va-ambition-number" aria-hidden="true">04</div>
+          <div class="va-ambition-icon"><i class="bi bi-briefcase-fill"></i></div>
+          <h3>Insertion professionnelle</h3>
+          <p>Nos diplômés occupent des postes clés dans les grandes compagnies minières, les bureaux d'études et les organisations internationales.</p>
+          <div class="va-ambition-arrow"><i class="bi bi-arrow-right"></i></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  {# ══════════════════════════════════════════════
+     BLOC 6 — VISION 2029 (premium gold bicolore)
+  ══════════════════════════════════════════════ #}
+  <div class="va-vision-block">
+    <div class="va-vision-deco" aria-hidden="true">
+      <div class="va-vision-circle va-vision-circle--1"></div>
+      <div class="va-vision-circle va-vision-circle--2"></div>
+      <div class="va-vision-circle va-vision-circle--3"></div>
+    </div>
+    <div class="va-container">
+      <div class="va-vision-inner">
+
+        <div class="va-vision-left va-reveal">
+          <div class="va-vision-badge">
+            <i class="bi bi-stars"></i> Vision 2029
+          </div>
+          <h2 class="va-vision-title">Un Label d'excellence<br>durable pour l'Afrique</h2>
+          <p class="va-vision-text">Dans le cadre de sa vision 2029, l'école vise à renforcer ses partenariats académiques et industriels, à moderniser ses équipements pédagogiques et à accroître sa visibilité sur la scène internationale — contribuant fortement à l'émergence du Sénégal et de la sous-région Ouest Africaine.</p>
+          <a href="/admissions" class="va-vision-cta">
+            Rejoindre l'aventure <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="va-vision-right va-reveal">
+          <div class="va-vision-objectives">
+            <div class="va-vision-obj">
+              <div class="va-vision-obj-num">01</div>
+              <div class="va-vision-obj-body">
+                <strong>Partenariats académiques &amp; industriels</strong>
+                <span>Renforcement du réseau international et des liens avec l'industrie minière.</span>
+              </div>
+            </div>
+            <div class="va-vision-obj">
+              <div class="va-vision-obj-num">02</div>
+              <div class="va-vision-obj-body">
+                <strong>Modernisation des infrastructures</strong>
+                <span>Équipements pédagogiques et laboratoires de pointe pour une formation d'excellence.</span>
+              </div>
+            </div>
+            <div class="va-vision-obj">
+              <div class="va-vision-obj-num">03</div>
+              <div class="va-vision-obj-body">
+                <strong>Visibilité internationale</strong>
+                <span>Accroître le rayonnement de l'ENSMG sur la scène africaine et mondiale.</span>
+              </div>
+            </div>
+            <div class="va-vision-obj">
+              <div class="va-vision-obj-num">04</div>
+              <div class="va-vision-obj-body">
+                <strong>Émergence économique africaine</strong>
+                <span>Contribuer au développement durable des ressources naturelles de l'Afrique de l'Ouest.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  {# ══════════════════════════════════════════════
+     BLOC 7 — CTA FINAL
+  ══════════════════════════════════════════════ #}
+  <div class="va-section va-section--off">
+    <div class="va-container">
+      <div class="va-cta-final va-reveal">
+        <div class="va-cta-bg" aria-hidden="true"></div>
+        <div class="va-cta-text">
+          <span class="va-cta-badge">Intégrez l'ENSMG</span>
+          <h2>Rejoignez l'ENSMG</h2>
+          <p>Intégrez une école d'excellence et devenez acteur du développement des géosciences en Afrique.</p>
+        </div>
+        <div class="va-cta-actions">
+          <a href="/admissions" class="btn-ensmg-primary">
+            <i class="bi bi-mortarboard-fill"></i> Candidater
+          </a>
+          <a href="/contact" class="btn-ensmg-outline-dark">
+            <i class="bi bi-chat-dots-fill"></i> Nous contacter
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>{# end .va-page #}

@@ -1,0 +1,107 @@
+<?php
+
+/**
+ * @file
+ * ENSMG Theme — theme hooks and preprocessing functions.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_preprocess_HOOK() for page.
+ */
+function ensmg_theme_preprocess_page(&$variables) {
+  $config = \Drupal::config('system.site');
+  $variables['site_name'] = $config->get('name');
+  $variables['site_slogan'] = $config->get('slogan');
+  $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+
+  // Get page title safely.
+  try {
+    $request = \Drupal::request();
+    $route_match = \Drupal::routeMatch();
+    $route = $route_match->getRouteObject();
+    if ($route) {
+      $title = \Drupal::service('title_resolver')->getTitle($request, $route);
+      $variables['page_title'] = $title;
+    }
+  }
+  catch (\Exception $e) {
+    $variables['page_title'] = '';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for html.
+ */
+function ensmg_theme_preprocess_html(&$variables) {
+  if (\Drupal::service('path.matcher')->isFrontPage()) {
+    $variables['attributes']['class'][] = 'page-front';
+  }
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node && is_object($node)) {
+    $variables['attributes']['class'][] = 'node-type-' . $node->bundle();
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for node.
+ */
+function ensmg_theme_preprocess_node(&$variables) {
+  $variables['display_submitted'] = FALSE;
+  if ($variables['node']->bundle() === 'article') {
+    $variables['display_submitted'] = TRUE;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block.
+ */
+function ensmg_theme_preprocess_block(&$variables) {
+  if (!empty($variables['plugin_id'])) {
+    $plugin = str_replace(':', '-', $variables['plugin_id']);
+    $variables['attributes']['class'][] = 'block--' . $plugin;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for breadcrumb.
+ */
+function ensmg_theme_preprocess_breadcrumb(&$variables) {
+  if (!empty($variables['breadcrumb'])) {
+    try {
+      $request = \Drupal::request();
+      $route_match = \Drupal::routeMatch();
+      $route = $route_match->getRouteObject();
+      if ($route) {
+        $page_title = \Drupal::service('title_resolver')->getTitle($request, $route);
+        if ($page_title) {
+          $variables['breadcrumb'][] = [
+            'text' => $page_title,
+            'attributes' => new \Drupal\Core\Template\Attribute(['class' => ['active']]),
+          ];
+        }
+      }
+    }
+    catch (\Exception $e) {
+      // Silently ignore.
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function ensmg_theme_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['#attributes']['class'][] = 'form-ensmg';
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for page templates.
+ */
+function ensmg_theme_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node && is_object($node)) {
+    $suggestions[] = 'page__node__' . $node->bundle();
+  }
+}

@@ -1,0 +1,173 @@
+{#
+/**
+ * @file
+ * ENSMG Theme — Page (basic page) node template
+ * Design premium avec sidebar contextuelle
+ */
+#}
+{% set classes = [
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+] %}
+
+<div class="inner-page-layout">
+
+  {# ── CONTENU PRINCIPAL ── #}
+  <main class="inner-page-main">
+    <article{{ attributes.addClass(classes) }}>
+
+      {{ title_prefix }}
+      {{ title_suffix }}
+
+      {# Barre de progression lecture #}
+      <div class="reading-progress-bar" id="readingProgress"></div>
+
+      {# Corps de l'article #}
+      <div class="inner-article-body inner-article-body--accordion">
+        {# Décoration top-right #}
+        <div class="article-body-deco"></div>
+
+        {# Tag de section #}
+        <div class="article-section-tag">
+          <i class="bi bi-journal-text"></i>
+          <span>Informations officielles</span>
+        </div>
+
+        <div{{ content_attributes.addClass('node__content') }}>
+          {{ content }}
+        </div>
+      </div>
+
+      {# Navigation bas de page #}
+      <div class="inner-page-nav-bottom">
+        <a href="javascript:history.back()" class="btn-back-page">
+          <i class="bi bi-arrow-left-circle-fill"></i>
+          <span>Retour</span>
+        </a>
+        <div class="share-bar">
+          <span class="share-label">Partager :</span>
+          <a href="#" class="share-btn share-fb" title="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="share-btn share-li" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="share-btn share-tw" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="share-btn share-mail" title="Email"><i class="bi bi-envelope-fill"></i></a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  {# ── SIDEBAR ── #}
+  <aside class="inner-page-sidebar">
+
+    {# Card : Navigation rapide #}
+    <div class="sidebar-card sidebar-nav-card">
+      <div class="sidebar-card-header">
+        <i class="bi bi-grid-fill"></i>
+        <span>L'Institut</span>
+      </div>
+      <ul class="sidebar-nav-links">
+        <li><a href="/ecole/vocation-ambition"><i class="bi bi-chevron-right"></i> Vocation & Ambition</a></li>
+        <li><a href="/ecole/gouvernance"><i class="bi bi-chevron-right"></i> Gouvernance</a></li>
+        <li><a href="/ecole/corps-enseignant"><i class="bi bi-chevron-right"></i> Corps Enseignant</a></li>
+        <li><a href="/ecole/vie-estudiantine"><i class="bi bi-chevron-right"></i> Vie Estudiantine</a></li>
+      </ul>
+    </div>
+
+    {# Card : Chiffres clés (style Ekursus) #}
+    <div class="sidebar-card sidebar-stats-card">
+      <div class="sidebar-card-header">
+        <i class="bi bi-bar-chart-fill"></i>
+        <span>Chiffres clés</span>
+      </div>
+      <div class="sidebar-stats-grid">
+        <div class="sidebar-stat-item">
+          <div class="sidebar-stat-number" data-target="400">400</div>
+          <div class="sidebar-stat-label">Ingénieurs formés</div>
+        </div>
+        <div class="sidebar-stat-item">
+          <div class="sidebar-stat-number" data-target="40">40</div>
+          <div class="sidebar-stat-label">Ans d'excellence</div>
+        </div>
+        <div class="sidebar-stat-item">
+          <div class="sidebar-stat-number" data-target="4">4</div>
+          <div class="sidebar-stat-label">Programmes</div>
+        </div>
+        <div class="sidebar-stat-item">
+          <div class="sidebar-stat-number" data-target="3">3</div>
+          <div class="sidebar-stat-label">Laboratoires</div>
+        </div>
+      </div>
+    </div>
+
+    {# Card : Formations phares (style Wastix) #}
+    <div class="sidebar-card sidebar-formations-card">
+      <div class="sidebar-card-header">
+        <i class="bi bi-mortarboard-fill"></i>
+        <span>Nos Formations</span>
+      </div>
+      <div class="sidebar-formation-list">
+        <a href="/formation/ingenieur-geologue" class="sidebar-formation-item">
+          <div class="sfi-icon"><i class="bi bi-gem"></i></div>
+          <div class="sfi-content">
+            <div class="sfi-title">Ingénieur Géologue</div>
+            <div class="sfi-level">Bac+5 · 5 ans</div>
+          </div>
+          <i class="bi bi-arrow-right sfi-arrow"></i>
+        </a>
+        <a href="/formation/master-geotechnique" class="sidebar-formation-item">
+          <div class="sfi-icon"><i class="bi bi-layers-fill"></i></div>
+          <div class="sfi-content">
+            <div class="sfi-title">Master Géotechnique</div>
+            <div class="sfi-level">Bac+5 · 2 ans</div>
+          </div>
+          <i class="bi bi-arrow-right sfi-arrow"></i>
+        </a>
+        <a href="/formation/licence-pro-geotechnique" class="sidebar-formation-item">
+          <div class="sfi-icon"><i class="bi bi-award-fill"></i></div>
+          <div class="sfi-content">
+            <div class="sfi-title">Licence Pro Géotechnique</div>
+            <div class="sfi-level">Bac+3 · 1 an</div>
+          </div>
+          <i class="bi bi-arrow-right sfi-arrow"></i>
+        </a>
+        <a href="/formation/certification-mofi" class="sidebar-formation-item">
+          <div class="sfi-icon"><i class="bi bi-patch-check-fill"></i></div>
+          <div class="sfi-content">
+            <div class="sfi-title">Certification MOFI</div>
+            <div class="sfi-level">Formation continue</div>
+          </div>
+          <i class="bi bi-arrow-right sfi-arrow"></i>
+        </a>
+      </div>
+    </div>
+
+    {# Card : Contact rapide #}
+    <div class="sidebar-card sidebar-contact-card">
+      <div class="sidebar-card-header">
+        <i class="bi bi-headset"></i>
+        <span>Nous contacter</span>
+      </div>
+      <div class="sidebar-contact-body">
+        <div class="sidebar-contact-item">
+          <i class="bi bi-telephone-fill"></i>
+          <span>+221 33 824 23 45</span>
+        </div>
+        <div class="sidebar-contact-item">
+          <i class="bi bi-envelope-fill"></i>
+          <span>contact@ensmg.ucad.sn</span>
+        </div>
+        <div class="sidebar-contact-item">
+          <i class="bi bi-geo-alt-fill"></i>
+          <span>UCAD, Dakar — Sénégal</span>
+        </div>
+        <a href="/contact" class="btn-sidebar-contact">
+          <i class="bi bi-send-fill"></i> Envoyer un message
+        </a>
+      </div>
+    </div>
+
+  </aside>
+
+</div>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <!-- Shield/emblem shape -->
+  <path d="M10,8 L30,2 L50,8 L50,35 Q50,50 30,58 Q10,50 10,35 Z" fill="#C9A84C" opacity="0.9"/>
+  <path d="M14,12 L30,7 L46,12 L46,34 Q46,47 30,54 Q14,47 14,34 Z" fill="#1F3A6E"/>
+  <!-- E letter stylized -->
+  <text x="20" y="40" font-family="Georgia,serif" font-size="22" font-weight="700" fill="#C9A84C">E</text>
+  <!-- School name text -->
+  <text x="60" y="22" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#1F3A6E">ENSMG</text>
+  <text x="60" y="36" font-family="Arial,sans-serif" font-size="7.5" fill="#444">École Nat. Sup. Mines &amp; Géologie</text>
+  <text x="60" y="50" font-family="Arial,sans-serif" font-size="7" fill="#666">UCAD — Dakar, Sénégal</text>
+</svg>

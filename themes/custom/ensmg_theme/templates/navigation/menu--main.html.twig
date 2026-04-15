@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * ENSMG Theme — Main menu template
+ */
+#}
+{% import _self as menus %}
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      <ul{{ attributes.addClass('site-nav-list') }}>
+    {% else %}
+      <ul class="nav-dropdown">
+    {% endif %}
+    {% for item in items %}
+      {% set classes = ['nav-item'] %}
+      {% if item.is_expanded %} {% set classes = classes|merge(['has-children']) %} {% endif %}
+      {% if item.in_active_trail %} {% set classes = classes|merge(['active-trail']) %} {% endif %}
+      {% if item.url.isRouted and item.url.routeName == '<current>' %} {% set classes = classes|merge(['is-active']) %} {% endif %}
+      <li{{ item.attributes.addClass(classes) }}>
+        {{ link(item.title, item.url) }}
+        {% if item.below %}
+          {{ menus.menu_links(item.below, attributes.removeClass(attributes.class), menu_level + 1) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

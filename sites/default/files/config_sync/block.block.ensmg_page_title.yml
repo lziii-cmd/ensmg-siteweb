@@ -1,0 +1,18 @@
+uuid: 3b1f61c7-758f-472d-856d-e47ae5680374
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - ensmg_theme
+id: ensmg_page_title
+theme: ensmg_theme
+region: pre_content
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Titre de la page'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: 5dd9be64-1c6c-4983-b9d4-61c87c6ee549
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ensmg_theme
+id: ensmg_breadcrumb
+theme: ensmg_theme
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: "Fil d'Ariane"
+  label_display: '0'
+  provider: system
+visibility: {  }

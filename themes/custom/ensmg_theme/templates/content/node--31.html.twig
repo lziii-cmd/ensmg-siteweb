@@ -1,0 +1,254 @@
+{#
+/**
+ * @file
+ * ENSMG — Page premium : Gouvernance (node 31)
+ */
+#}
+{{ attach_library('ensmg_theme/gouvernance') }}
+<div class="gov-page">
+
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  {# ══════════════════════════════════════════
+     HERO
+  ══════════════════════════════════════════ #}
+  <div class="gov-hero">
+    <div class="gov-hero-shapes" aria-hidden="true">
+      <div class="gov-shape gov-shape--1"></div>
+      <div class="gov-shape gov-shape--2"></div>
+      <div class="gov-shape gov-shape--3"></div>
+    </div>
+    <div class="gov-hero-grid" aria-hidden="true"></div>
+    <div class="gov-container gov-hero-inner">
+      {# Breadcrumb déplacé dans le header (header-breadcrumb-bar) #}
+      <div class="gov-hero-eyebrow">
+        <span class="gov-pulse-dot"></span>
+        École · Gouvernance
+      </div>
+      <h1 class="gov-hero-title">
+        Gouvernance<br>
+        <span class="gov-hero-title-accent">de l'ENSMG</span>
+      </h1>
+      <p class="gov-hero-sub">
+        Une structure de direction engagée pour l'excellence académique<br>
+        et le rayonnement international de l'école.
+      </p>
+      <div class="gov-hero-stats">
+        <div class="gov-hstat">
+          <span class="gov-hstat-n">1971</span>
+          <span class="gov-hstat-l">Fondation</span>
+        </div>
+        <div class="gov-hstat-sep" aria-hidden="true"></div>
+        <div class="gov-hstat">
+          <span class="gov-hstat-n">UCAD</span>
+          <span class="gov-hstat-l">Rattachement</span>
+        </div>
+        <div class="gov-hstat-sep" aria-hidden="true"></div>
+        <div class="gov-hstat">
+          <span class="gov-hstat-n">2029</span>
+          <span class="gov-hstat-l">Vision</span>
+        </div>
+      </div>
+    </div>
+    <div class="gov-hero-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,30 C480,70 960,0 1440,45 L1440,70 L0,70 Z" fill="#ffffff"/>
+      </svg>
+    </div>
+  </div>
+
+  {# ══════════════════════════════════════════
+     DIRECTEUR
+  ══════════════════════════════════════════ #}
+  <div class="gov-section gov-section--white">
+    <div class="gov-container">
+      <div class="gov-director-layout">
+
+        {# Avatar / Portrait #}
+        <div class="gov-director-portrait gov-reveal">
+          <div class="gov-portrait-frame">
+            <div class="gov-portrait-avatar" aria-label="Portrait du Directeur">
+              <i class="bi bi-person-fill"></i>
+            </div>
+            <div class="gov-portrait-ring gov-portrait-ring--1" aria-hidden="true"></div>
+            <div class="gov-portrait-ring gov-portrait-ring--2" aria-hidden="true"></div>
+          </div>
+          <div class="gov-portrait-badge">
+            <i class="bi bi-patch-check-fill"></i> Directeur Général
+          </div>
+        </div>
+
+        {# Texte directeur #}
+        <div class="gov-director-body gov-reveal">
+          <div class="gov-section-eyebrow">
+            <span class="gov-eyebrow-dot"></span>Direction
+          </div>
+          <h2 class="gov-section-title">Pr. Mahamadane DIENE</h2>
+          <p class="gov-director-role">Directeur Général — École Nationale Supérieure des Mines et de la Géologie</p>
+
+          <blockquote class="gov-director-quote">
+            <i class="bi bi-quote" aria-hidden="true"></i>
+            L'ENSMG est dirigée par le Professeur Mahamadane DIENE, qui assure la direction générale de l'école et pilote sa transformation vers l'excellence académique dans le cadre de la vision 2029.
+          </blockquote>
+
+          <div class="gov-director-tags">
+            <span class="gov-tag"><i class="bi bi-mortarboard-fill"></i> Excellence académique</span>
+            <span class="gov-tag"><i class="bi bi-globe2"></i> Vision internationale</span>
+            <span class="gov-tag"><i class="bi bi-graph-up-arrow"></i> Vision 2029</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  {# Wave off #}
+  <div class="gov-wave-sep gov-wave-sep--white-off" aria-hidden="true">
+    <svg viewBox="0 0 1440 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,25 C360,50 1080,0 1440,25 L1440,50 L0,50 Z" fill="#f7f8fc"/>
+    </svg>
+  </div>
+
+  {# ══════════════════════════════════════════
+     ORGANISATION — Organigramme visuel
+  ══════════════════════════════════════════ #}
+  <div class="gov-section gov-section--off">
+    <div class="gov-container">
+
+      <div class="gov-section-header gov-reveal">
+        <div class="gov-section-eyebrow">
+          <span class="gov-eyebrow-dot"></span>Organisation
+        </div>
+        <h2 class="gov-section-title">Structure organisationnelle</h2>
+        <p class="gov-section-lead">L'ENSMG s'appuie sur des organes de direction complémentaires pour garantir la qualité de l'enseignement, de la recherche et de la vie institutionnelle.</p>
+      </div>
+
+      {# Nœud central #}
+      <div class="gov-org-tree gov-reveal">
+        <div class="gov-org-root">
+          <div class="gov-org-root-icon"><i class="bi bi-building-fill"></i></div>
+          <div class="gov-org-root-label">ENSMG</div>
+          <div class="gov-org-root-sub">Direction Générale</div>
+        </div>
+        <div class="gov-org-connector" aria-hidden="true"></div>
+      </div>
+
+      <div class="gov-org-grid">
+        <div class="gov-org-card gov-reveal">
+          <div class="gov-org-icon gov-org-icon--1"><i class="bi bi-person-badge-fill"></i></div>
+          <h3>La Direction Générale</h3>
+          <p>Pilotage stratégique, vision institutionnelle et représentation officielle de l'école.</p>
+        </div>
+        <div class="gov-org-card gov-reveal">
+          <div class="gov-org-icon gov-org-icon--2"><i class="bi bi-journal-richtext"></i></div>
+          <h3>Le Conseil Pédagogique</h3>
+          <p>Définition et suivi des programmes de formation, évaluation des enseignements.</p>
+        </div>
+        <div class="gov-org-card gov-reveal">
+          <div class="gov-org-icon gov-org-icon--3"><i class="bi bi-lightbulb-fill"></i></div>
+          <h3>Le Conseil Scientifique</h3>
+          <p>Orientation et validation des activités de recherche et des partenariats scientifiques.</p>
+        </div>
+        <div class="gov-org-card gov-reveal">
+          <div class="gov-org-icon gov-org-icon--4"><i class="bi bi-diagram-3-fill"></i></div>
+          <h3>Les Départements</h3>
+          <p>Organisation des filières d'enseignement : Géologie, Mines, Hydrogéologie, Géotechnique.</p>
+        </div>
+        <div class="gov-org-card gov-reveal">
+          <div class="gov-org-icon gov-org-icon--5"><i class="bi bi-microscope"></i></div>
+          <h3>Les Laboratoires</h3>
+          <p>Unités de recherche appliquée contribuant à l'avancement des géosciences africaines.</p>
+        </div>
+        <div class="gov-org-card gov-reveal">
+          <div class="gov-org-icon gov-org-icon--6"><i class="bi bi-gear-fill"></i></div>
+          <h3>Les Services administratifs</h3>
+          <p>Scolarité, gestion administrative et services d'appui au fonctionnement de l'école.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {# Wave navy #}
+  <div class="gov-wave-sep gov-wave-sep--off-navy" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="#0f1c37"/>
+    </svg>
+  </div>
+
+  {# ══════════════════════════════════════════
+     TUTELLE (fond navy)
+  ══════════════════════════════════════════ #}
+  <div class="gov-section gov-section--navy">
+    <div class="gov-container">
+      <div class="gov-section-header" style="text-align:center;">
+        <div class="gov-section-eyebrow gov-eyebrow--light">
+          <span class="gov-eyebrow-dot gov-eyebrow-dot--gold"></span>Tutelle
+        </div>
+        <h2 class="gov-section-title gov-title--white">Rattachement institutionnel</h2>
+        <p class="gov-section-lead gov-lead--light">L'ENSMG s'inscrit dans un cadre institutionnel solide, garantissant la qualité académique et la légitimité de ses diplômes.</p>
+      </div>
+
+      <div class="gov-tutelle-grid">
+
+        <div class="gov-tutelle-card gov-reveal">
+          <div class="gov-tutelle-icon">
+            <i class="bi bi-bank2"></i>
+          </div>
+          <div class="gov-tutelle-body">
+            <div class="gov-tutelle-badge">Établissement de rattachement</div>
+            <h3>Université Cheikh Anta Diop</h3>
+            <p>L'ENSMG est une composante de l'Université Cheikh Anta Diop (UCAD) de Dakar, la plus grande université francophone d'Afrique subsaharienne.</p>
+            <div class="gov-tutelle-tag">UCAD · Dakar, Sénégal</div>
+          </div>
+        </div>
+
+        <div class="gov-tutelle-card gov-reveal">
+          <div class="gov-tutelle-icon gov-tutelle-icon--gold">
+            <i class="bi bi-shield-fill-check"></i>
+          </div>
+          <div class="gov-tutelle-body">
+            <div class="gov-tutelle-badge gov-tutelle-badge--gold">Autorité de tutelle</div>
+            <h3>Ministère de l'Enseignement Supérieur</h3>
+            <p>Sous la tutelle du Ministère de l'Enseignement Supérieur, de la Recherche et de l'Innovation du Sénégal, garant de la qualité et des standards académiques.</p>
+            <div class="gov-tutelle-tag">MESRI · République du Sénégal</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  {# Wave white #}
+  <div class="gov-wave-sep gov-wave-sep--navy-white" aria-hidden="true">
+    <svg viewBox="0 0 1440 55" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,20 C360,55 1080,0 1440,30 L1440,55 L0,55 Z" fill="#f7f8fc"/>
+    </svg>
+  </div>
+
+  {# ══════════════════════════════════════════
+     CTA
+  ══════════════════════════════════════════ #}
+  <div class="gov-section gov-section--off">
+    <div class="gov-container">
+      <div class="gov-cta gov-reveal">
+        <div class="gov-cta-bg" aria-hidden="true"></div>
+        <div class="gov-cta-text">
+          <span class="gov-cta-eyebrow">En savoir plus</span>
+          <h2>Découvrir l'ENSMG</h2>
+          <p>Vocation, ambition, formations et recherches — tout sur notre école.</p>
+        </div>
+        <div class="gov-cta-actions">
+          <a href="/institution/vocation-ambition" class="btn-ensmg-primary">
+            <i class="bi bi-building-fill"></i> Notre vocation
+          </a>
+          <a href="/contact" class="btn-ensmg-outline-dark">
+            <i class="bi bi-chat-dots-fill"></i> Nous contacter
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>{# end .gov-page #}

@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Laragon — ensmgsiteweb.test (port 80)",
+      "runtimeExecutable": "C:/laragon/bin/apache/httpd-2.4.66-260223-Win64-VS18/bin/httpd.exe",
+      "runtimeArgs": ["-f", "C:/laragon/etc/apache2/sites-enabled/ensmgsiteweb.test.conf", "-X"],
+      "port": 80
+    },
+    {
+      "name": "PHP Built-in Server (Drupal)",
+      "runtimeExecutable": "C:/laragon/bin/php/php-8.3.30-Win32-vs16-x64/php.exe",
+      "runtimeArgs": ["-S", "127.0.0.1:8080", ".ht.router.php"],
+      "port": 8080
+    },
+    {
+      "name": "Drush Runserver (port 8888)",
+      "runtimeExecutable": "C:/laragon/bin/php/php-8.3.30-Win32-vs16-x64/php.exe",
+      "runtimeArgs": ["vendor/drush/drush/drush.php", "runserver", "127.0.0.1:8888"],
+      "port": 8888
+    }
+  ]
+}
