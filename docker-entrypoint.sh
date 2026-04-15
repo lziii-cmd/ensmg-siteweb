@@ -39,13 +39,13 @@ if echo "$DB_CHECK" | grep -q "1"; then
     echo "==> Drupal déjà installé. Mise à jour de la configuration et du thème..."
     echo "==> Réinitialisation du mot de passe admin..."
     vendor/bin/drush user:password admin "${DRUPAL_ADMIN_PASS:-Admin@ENSMG2025}" || true
-    echo "==> Activation du thème ENSMG..."
-    vendor/bin/drush theme:install ensmg_theme -y || true
-    vendor/bin/drush config:set system.theme default ensmg_theme -y || true
-    vendor/bin/drush config:set system.theme admin claro -y || true
     echo "==> Import de la configuration..."
     vendor/bin/drush config:import --yes || true
     vendor/bin/drush php:script scripts/setup_blocks.php || true
+    echo "==> Activation du thème ENSMG (après config:import pour ne pas être écrasé)..."
+    vendor/bin/drush theme:install ensmg_theme -y || true
+    vendor/bin/drush config:set system.theme default ensmg_theme -y || true
+    vendor/bin/drush config:set system.theme admin claro -y || true
     echo "==> Vidage du cache..."
     vendor/bin/drush cr
   else
