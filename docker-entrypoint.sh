@@ -37,6 +37,8 @@ if echo "$DB_CHECK" | grep -q "1"; then
   USER_COUNT=$(vendor/bin/drush sql:query "SELECT COUNT(*) FROM users_field_data" 2>&1)
   if echo "$USER_COUNT" | grep -qE "^[0-9]+$"; then
     echo "==> Drupal déjà installé. Mise à jour de la configuration et du thème..."
+    echo "==> Réinitialisation du mot de passe admin..."
+    vendor/bin/drush user:password admin "${DRUPAL_ADMIN_PASS:-Admin@ENSMG2025}" || true
     vendor/bin/drush config:import --yes || true
     vendor/bin/drush theme:install ensmg_theme -y || true
     vendor/bin/drush config:set system.theme default ensmg_theme -y || true
