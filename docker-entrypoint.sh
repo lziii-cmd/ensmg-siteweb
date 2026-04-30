@@ -3,13 +3,25 @@
 SETTINGS="/var/www/html/sites/default/settings.php"
 
 echo "==> Génération de settings.php..."
+
+# SSL requis par Neon — variables libpq lues par PHP/PDO automatiquement
+export PGSSLMODE=require
+export PGCHANNELBINDING=require
+
 cat > $SETTINGS << 'PHP'
 <?php
 $db = parse_url(getenv('DATABASE_URL'));
+// Extraire les paramètres de la query string (?sslmode=require&channel_binding=require)
+parse_str($db['query'] ?? '', $dbQuery);
+
+// SSL libpq (Neon) — au cas où les env vars ne suffisent pas
+if (!empty($dbQuery['sslmode']))        putenv('PGSSLMODE='        . $dbQuery['sslmode']);
+if (!empty($dbQuery['channel_binding'])) putenv('PGCHANNELBINDING=' . $dbQuery['channel_binding']);
+
 $databases['default']['default'] = [
   'database'  => ltrim($db['path'], '/'),
-  'username'  => urldecode($db['user']),
-  'password'  => urldecode($db['pass']),
+  'username'  => urldecode($db['user'] ?? ''),
+  'password'  => urldecode($db['pass'] ?? ''),
   'host'      => $db['host'],
   'port'      => (string)($db['port'] ?? '5432'),
   'driver'    => 'pgsql',
